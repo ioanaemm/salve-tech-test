@@ -7,7 +7,7 @@ import { Table, Select } from "antd";
 import "./App.scss";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [clinics, setClinics] = useState([]);
   const [patients, setPatients] = useState([]);
   const [selectedClinic, setSelectedClinic] = useState();
@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   const fetchClinics = async () => {
-    setLoading(true);
+    setIsLoading(true);
     try {
       const { data: response } = await axios.get(
         "https://mhjtztb6nwwoaqprvmq2hu5ge40wsttr.lambda-url.eu-west-2.on.aws/clinics"
@@ -27,15 +27,17 @@ function App() {
     } catch (error) {
       console.log(error.message);
     }
-    setLoading(false);
+    setIsLoading(false);
   };
 
   async function onClinicChange(value) {
+    setIsLoading(true);
     setSelectedClinic(value);
     const { data: response } = await axios.get(
       `https://mhjtztb6nwwoaqprvmq2hu5ge40wsttr.lambda-url.eu-west-2.on.aws/clinics/${value}/patients`
     );
     setPatients(response);
+    setIsLoading(false);
   }
 
   console.log("patients = ", patients);
@@ -97,7 +99,7 @@ function App() {
           ))}
         </Select>
       </div>
-      <Table columns={columns} dataSource={patients}></Table>
+      <Table columns={columns} dataSource={patients} loading={isLoading} />
     </div>
   );
 }
