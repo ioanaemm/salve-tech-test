@@ -40,28 +40,26 @@ function App() {
     setIsLoading(false);
   }
 
-  console.log("patients = ", patients);
-
   const columns = [
     {
       title: "First Name",
       dataIndex: "first_name",
       key: "first_name",
-      sorter: (a, b) => a.first_name.length - b.first_name.length,
+      sorter: (a, b) => (a.first_name < b.first_name ? 1 : -1),
       ellipsis: true,
     },
     {
       title: "Last Name",
       dataIndex: "last_name",
       key: "last_name",
-      sorter: (a, b) => a.last_name.length - b.last_name.length,
+      sorter: (a, b) => (a.last_name < b.last_name ? 1 : -1),
       ellipsis: true,
     },
     {
       title: "Date of birth",
       dataIndex: "date_of_birth",
       key: "date_of_birth",
-      sorter: (a, b) => a.date_of_birth.length - b.date_of_birth.length,
+      sorter: (a, b) => (a.date_of_birth < b.date_of_birth ? 1 : -1),
       ellipsis: true,
     },
   ];
@@ -88,6 +86,7 @@ function App() {
       <div className="clinic-selector-container">
         <h3 className="clinic-label">Clinic:</h3>
         <Select
+          data-cy="clinic-selector"
           className="clinic-selector"
           value={selectedClinic}
           onChange={onClinicChange}
@@ -99,7 +98,7 @@ function App() {
           ))}
         </Select>
       </div>
-      <Table columns={columns} dataSource={patients} loading={isLoading} />
+      <Table columns={columns} dataSource={patients} loading={isLoading} data-cy="patients-table" />
     </div>
   );
 }

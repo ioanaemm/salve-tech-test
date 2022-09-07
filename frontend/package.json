@@ -20,7 +20,8 @@
     "start": "craco start",
     "build": "craco build && mv build ../backend/frontend-build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "cypress": "./node_modules/.bin/cypress"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^10.7.0"
   }
 }

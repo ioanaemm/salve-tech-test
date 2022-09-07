@@ -36,34 +36,17 @@ body {
   margin-top: 1rem;
 
   .title {
-    -webkit-text-size-adjust: 100%;
-    font-family: Avenir, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    word-wrap: break-word;
-    font-feature-settings: "kern", "liga", "clig", "calt";
-    font-kerning: normal;
-    box-sizing: inherit;
-    color: #0e0e0e;
     font-size: 28px;
     line-height: 1.25;
-    font-stretch: normal;
     font-style: normal;
     font-weight: 400;
     letter-spacing: normal;
     margin: 0 0 1.45rem;
     padding: 0;
     margin-bottom: 25px;
-    white-space: pre-wrap;
   }
 
   .subtitle {
-    -webkit-text-size-adjust: 100%;
-    font-family: Avenir, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    word-wrap: break-word;
-    font-feature-settings: "kern", "liga", "clig", "calt";
-    font-kerning: normal;
-    box-sizing: inherit;
     margin: 0 0 1.45rem;
     padding: 0;
     color: #595959;
@@ -72,7 +55,6 @@ body {
     line-height: 1.5;
     margin-bottom: 25px;
     max-width: 869px;
-    white-space: pre-wrap;
   }
 }
 
