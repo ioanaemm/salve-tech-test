@@ -231,6 +231,16 @@ resource "aws_lambda_function" "api" {
   source_code_hash = data.archive_file.lambda_salve.output_base64sha256
 
   role = aws_iam_role.lambda_exec.arn
+
+  environment  {
+    variables = {
+      DB_HOST=aws_db_instance.default.address
+      DB_PORT=aws_db_instance.default.port
+      DB_DATABASE=var.database_name
+      DB_USERNAME=var.database_username
+      DB_PASSWORD=var.database_password
+    }
+  }
 }
 
 resource "aws_lambda_function_url" "api" {
