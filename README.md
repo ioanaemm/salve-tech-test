@@ -8,8 +8,6 @@ http://salve-interview-static-website.s3-website.eu-west-2.amazonaws.com/
 
 ![Cypress](https://salve-interview-static-website.s3.eu-west-2.amazonaws.com/cypress.gif)
 
-(cypress.gif "Testing with Cypress")
-
 ---
 
 ## Architecture
