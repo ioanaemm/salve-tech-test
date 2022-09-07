@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build && mv build ../backend/frontend-build",
+    "build": "craco build && rm -rf ../backend/frontend-build && mv build ../backend/frontend-build",
     "test": "craco test",
     "eject": "craco eject",
     "cypress": "./node_modules/.bin/cypress"
