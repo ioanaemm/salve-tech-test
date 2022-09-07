@@ -3,6 +3,11 @@ variable "bucket_prefix" {
   description = "Name of the s3 bucket to be created."
   default     = "salve-interview"
 }
+variable "bucket_prefix_frontend" {
+  type        = string
+  description = "Name of the s3 bucket to be created."
+  default     = "salve-frontend"
+}
 
 variable "region" {
   type        = string
